@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -34,7 +35,20 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation project(':GCoreVideoCallsSDK')
+    implementation project(':mediasoup-android-client')
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$LIFECYCLE_VERSION"
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    implementation "com.jakewharton.timber:timber:$TIMBER_VERSION"
+    implementation("io.reactivex.rxjava2:rxjava:$RX_JAVA_VERSION")
+    implementation("io.reactivex.rxjava2:rxandroid:$RX_VERSION")
+    implementation "org.protoojs.droid:protoo-client:$PROTO_VERSION"
+    implementation("com.squareup.okhttp3:okhttp:$OKHTTP_VERSION")
+    implementation("com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION")
+
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     testImplementation 'junit:junit:4.13.2'

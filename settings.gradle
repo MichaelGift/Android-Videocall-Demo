@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Android Video Call Demo"
 include ':app'
+include ':GCoreVideoCallsSDK'
+include ':mediasoup-android-client'
